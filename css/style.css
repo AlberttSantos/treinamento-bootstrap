@@ -26,6 +26,11 @@
     background-color: #a4ccab;
 }
 
+.sidebar .nav-link.active {
+    background-color: #a4ccab;
+    color: #fff;
+}
+
 .content{   
      margin-left: 10px;
 }
