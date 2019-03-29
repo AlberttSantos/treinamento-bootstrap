@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_old.css">
+    <title>Agendamento de Salas</title>
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="home.html">Agendamento de Salas</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- sidebar -->
+            <nav class="col-md-2 sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="sala.html">
+                                Salas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="evento.html">
+                                Eventos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="col-md-9 content">
+                <!-- Topo -->
+                <div class="top">
+                    <h2>Gerenciamento de Salas</h2>
+                    <button type="button" data-toggle="modal" data-target="#cadastro" data-uid="1" class="update btn btn-primary btn-sm">Nova
+                        Sala</button>
+                </div>
+                <!-- Tabela -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Sala</th>
+                            <th scope="col">Capacidade</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Eventos 1</td>
+                            <td>32</td>
+                            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm">Editar</button></td>
+                            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm">Excluir</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Eventos 2</td>
+                            <td>15</td>
+                            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm">Editar</button></td>
+                            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm">Excluir</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Exluir -->
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteTitle">Excluir</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente excluir a sala?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Editar Sala -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editLabel">Editar Sala</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="edit-sala">Nome da sala:</label>
+                                <input type="sala" class="form-control" id="edit-sala" placeholder="Nome da sala">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="edit-capacidade">Capacidade:</label>
+                                <input type="capacidade" class="form-control" id="edit-capacidade" placeholder="Capacidade">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck-projetor">
+                                    <label class="form-check-label" for="gridCheck-projetor">
+                                        Possui projetor
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck-tv">
+                                    <label class="form-check-label" for="gridCheck-tv">
+                                        Possui TV
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Salvar Sala -->
+    <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="cadastroLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastroLabel">Cadastrar Sala</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="edit-sala">Nome da sala:</label>
+                                <input type="sala" class="form-control" id="edit-sala" placeholder="Nome da sala">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="edit-capacidade">Capacidade:</label>
+                                <input type="capacidade" class="form-control" id="edit-capacidade" placeholder="Capacidade">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck-projetor">
+                                    <label class="form-check-label" for="gridCheck-projetor">
+                                        Possui projetor
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck-tv">
+                                    <label class="form-check-label" for="gridCheck-tv">
+                                        Possui TV
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+.navbar-light{
+    background-color: #0cca8e;    
+}
+
+.navbar-light .navbar-brand{
+    color: #ffffff;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #ffffff;
+}
+
+.sidebar{   
+    padding: 0px;    
+    height: calc(100vh - 56px); 
+    background-color: #c5dec9;    
+}
+
+.sidebar .nav-link {
+    background-color: #c5dec9;
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar a:hover{
+    background-color: #a4ccab;
+}
+
+.sidebar .nav-link.active {
+    background-color: #a4ccab;
+    color: #fff;
+}
+
+.content{   
+     margin-left: 10px;
+}
+
+.btn-warning, .btn-warning:hover{
+    color: #ffffff;    
+}
+
+.table{
+    margin-top: 20px;
+}
+
+.top{
+    margin-top: 20px;
+}
+
+.top button{
+    margin-top: 10px;
+}
+
+@media (max-width: 768px)
+{
+    .sidebar{
+        height: auto;    
+    }
+}

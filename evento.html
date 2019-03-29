@@ -1,197 +1,42 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Agendamento de Salas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
 </head>
 
 <body>
+    <!-- menu -->
     <nav class="navbar navbar-light">
-        <a class="navbar-brand" href="home.html">Agendamento de Salas</a>
+        <a href="#" class="navbar-brand">
+            <img src="img/icon.png" width="30" height="30" alt="">
+            Agendamento de Salas
+        </a>
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="home.html">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sala.html">
-                                Salas
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="evento.html">
-                                Eventos
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- menu-lateral -->
+    <div class="row no-gutters">
+        <div class="col-md-2 menu-lateral">
+            <nav class="nav nav-pills nav-fill flex-column">
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <a href="sala.html" class="nav-item nav-link">Salas</a>
+                <a href="evento.html" class="nav-item nav-link active">Eventos</a>
             </nav>
-            <div class="col-md-9 content">
-                <!-- Topo -->
-                <div class="top">
-                    <h2>Gerenciamento de Eventos</h2>
-                    <button type="button" data-toggle="modal" data-target="#cadastro" data-uid="1" class="update btn btn-primary btn-sm">Novo
-                        Evento</button>
-                </div>
-                <!-- Tabela -->
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Evento</th>
-                            <th scope="col">Sala</th>
-                            <th scope="col">Data Início</th>
-                            <th scope="col">Data Fim</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Curso bootstrap</td>
-                            <td>Eventos 1</td>
-                            <td>26/03/2018</td>
-                            <td>27/03/2018</td>
-                            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm">Editar</button></td>
-                            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm">Excluir</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Curso javascript</td>
-                            <td>Eventos 2</td>
-                            <td>26/03/2018</td>
-                            <td>27/03/2018</td>
-                            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm">Editar</button></td>
-                            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm">Excluir</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+        </div>
+        <!-- conteudo -->
+        <div class="col-md 10">
+            <div class="conteudo">
+                <h2>Eventos</h2>
             </div>
         </div>
     </div>
-    <!-- Modal Exluir -->
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteTitle">Excluir</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Deseja realmente excluir o evento?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Confirmar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Editar Evento -->
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editLabel">Editar Evento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-8">
-                                <label for="edit-evento">Nome da evento:</label>
-                                <input type="evento" class="form-control" id="edit-evento" placeholder="Nome do evento">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="edit-sala">Sala:</label>
-                                <select class="form-control" id="edit-sala">
-                                    <option>Eventos 1</option>
-                                    <option>Eventos 2</option>
-                                    <option>Eventos 3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="edit-data-inicio-evento">Data início:</label>
-                                <input type='datetime-local' class="form-control" id="edit-data-inicio-evento" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="edit-data-fim-evento">Data fim:</label>
-                                <input type='datetime-local' class="form-control" id="edit-data-fim-evento" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Salvar Alterações</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Salvar Sala -->
-    <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="cadastroLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cadastroLabel">Cadastrar Evento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-8">
-                                <label for="cadastro-evento">Nome do evento:</label>
-                                <input type="evento" class="form-control" id="cadastro-evento" placeholder="Nome do evento">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="cadastro-sala">Sala:</label>
-                                <select class="form-control" id="cadastro-sala">
-                                    <option>Eventos 1</option>
-                                    <option>Eventos 2</option>
-                                    <option>Eventos 3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="cadastro-data-inicio-evento">Data início:</label>
-                                <input type='datetime-local' class="form-control" id="cadastro-data-inicio-evento" />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="cadastro-data-fim-evento">Data fim:</label>
-                                <input type='datetime-local' class="form-control" id="cadastro-data-fim-evento" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Salvar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

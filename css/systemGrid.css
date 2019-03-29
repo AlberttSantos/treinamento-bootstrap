@@ -1,0 +1,4 @@
+.container-fluid .row > *{
+background-color:#d3d3d3;
+border: 1px solid #ffffff;
+}
