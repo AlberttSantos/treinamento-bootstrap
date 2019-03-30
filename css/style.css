@@ -1,4 +1,4 @@
-/* menu */
+/* navbar */
 .navbar-light{
     background-color: #0cca8e;    
 }
@@ -7,10 +7,17 @@
    color:#fff !important;
 }
 
-/* menu-lateral */
+/* nav */
 .menu-lateral{
     height: calc(100vh - 59px);
     background-color: #c5dec9;    
+}
+
+@media (max-width: 768px)
+{
+    .menu-lateral{
+        height: auto;    
+    }
 }
 
 .menu-lateral a{
@@ -30,6 +37,16 @@
 
 /* conteudo */
 .conteudo{
-    margin: 10px;
-    margin-left: 20px;
+    margin: 20px;
+    margin-left: 30px;
+}
+
+.conteudo .btn-novo{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+/* btn */
+.btn-warning{
+    color : #fff !important;
 }
